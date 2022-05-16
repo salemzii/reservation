@@ -1,10 +1,44 @@
 
 {% block content %}
 
-    {% for reservation in reservations %}
 
-        {{ reservation.rental_id.id }}
+    <table>
+        <tr>
+        <th>Rental Name</th>
+        <th>Reservation Id</th>
+        <th>Check in</th>
+        <th>Check out</th>
+        <th>Previous Reservation Id</th>
+        </tr>
 
-    {% endfor %}
+        {% for key in maps %} 
+            <tr>
+                <td>
+                    {{ key.1.0 }}
+                </td>
+                <td>
+                    {{ key.0 }}
+                </td>
+                <td>
+                    {{ key.1.2 }}
+                </td>
+                <td>
+                    {{ key.1.3 }}
+                </td>
+                <td>
+                    {{ key.1.1 }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
 
 {% endblock content %} 
+
+<style>
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    }
+</style>
